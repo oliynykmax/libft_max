@@ -23,21 +23,21 @@ BONUS = ${BONUS_C:.c=.o}
 .SECONDARY: ${BONUS}
 
 OBJS = ${SRCS:.c=.o}
-.SECONDARY: $(OBJS)
+.SECONDARY: ${OBJS}
 
 CC = cc
 
 RM = rm -f
 
 CFLAGS = -Wall -Wextra -Werror
+
+all:	${NAME}
+
 .c.o:
 	${CC} ${CFLAGS} -I. -c $< -o ${<:.c=.o}
 
 $(NAME): ${OBJS}
 	ar rcs ${NAME} ${OBJS}
-
-
-all:	${NAME}
 	
 clean:
 	${RM} ${OBJS} ${BONUS}
