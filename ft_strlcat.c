@@ -6,7 +6,7 @@
 /*   By: maoliiny <maoliiny@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:38:58 by maoliiny          #+#    #+#             */
-/*   Updated: 2025/04/15 11:17:49 by maoliiny         ###   ########.fr       */
+/*   Updated: 2025/05/05 14:16:02 by maoliiny         ###   LAUSANNE.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	if (j == dstsize)
 		return (dstsize + k);
 	while (src[i] != '\0' && j < dstsize - 1)
-	{	
+	{
 		dst[j] = src[i];
 		i++;
 		j++;

@@ -6,13 +6,14 @@
 /*   By: maoliiny <maoliiny@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 17:53:10 by maoliiny          #+#    #+#             */
-/*   Updated: 2025/04/17 16:54:30 by maoliiny         ###   ########.fr       */
+/*   Updated: 2025/05/05 14:26:55 by maoliiny         ###   LAUSANNE.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -72,5 +73,31 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
+
+int					ft_printf_c(char c);
+int					choose_type(va_list *args, const char **s);
+int					ft_printf_s(char *s);
+int					ft_printf_diux(long un, char *base);
+int					write_reverse(const char *buffer, int len);
+int					ft_printf_pnum(unsigned long long un, char *base);
+int					ft_printf(const char *s, ...);
+int					ft_printf_p(void *ptr);
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 32
+# endif
+
+# ifndef FD_NUM
+#  define FD_NUM 1024
+# endif
+
+char				*ft_strncpy(const char *src, int n);
+char				*extract_line(char **res);
+char				*get_next_line(int fd);
+int					ft_fnl(char *s, char c);
+size_t				ft_strlen(const char *s);
+int					ft_strcat(char **res, int fd);
+char				*ft_strjoin(char const *s1, char const *s2);
+void				*ft_memcpy(void *dest, const void *src, size_t n);
 
 #endif

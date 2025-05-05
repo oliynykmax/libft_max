@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maoliiny <maoliiny@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 14:31:16 by maoliiny          #+#    #+#             */
-/*   Updated: 2025/04/28 15:32:14 by maoliiny         ###   ########.fr       */
+/*   Updated: 2025/05/05 14:28:05 by maoliiny         ###   LAUSANNE.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 char	*ft_strncpy(const char *src, int n)
 {
@@ -36,7 +36,7 @@ char	*extract_line(char **res)
 	char	*tail;
 	int		idx;
 
-	idx = ft_strchr(*res, '\n');
+	idx = ft_fnl(*res, '\n');
 	if (idx != -1)
 	{
 		line = ft_strncpy(*res, idx + 1);
@@ -64,7 +64,7 @@ char	*get_next_line(int fd)
 	if (!res[fd])
 		res[fd] = ft_strncpy("", 0);
 	bytes = 1;
-	while (ft_strchr(res[fd], '\n') == -1 && bytes > 0)
+	while (ft_fnl(res[fd], '\n') == -1 && bytes > 0)
 		bytes = ft_strcat(&res[fd], fd);
 	if ((bytes <= 0) && *res[fd] == '\0')
 	{

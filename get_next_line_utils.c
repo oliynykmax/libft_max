@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maoliiny <maoliiny@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 15:09:11 by maoliiny          #+#    #+#             */
-/*   Updated: 2025/04/28 15:32:37 by maoliiny         ###   ########.fr       */
+/*   Updated: 2025/05/05 14:30:06 by maoliiny         ###   LAUSANNE.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
-int	ft_strchr(char *s, char c)
+int	ft_fnl(char *s, char c)
 {
 	size_t	i;
 
@@ -26,18 +26,6 @@ int	ft_strchr(char *s, char c)
 		i++;
 	}
 	return (-1);
-}
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	if (!s)
-		return (0);
-	while (s[i])
-		i++;
-	return (i);
 }
 
 int	ft_strcat(char **res, int fd)
